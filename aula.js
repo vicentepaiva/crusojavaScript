@@ -338,3 +338,6 @@ function criarAparelho(marcaAparelho,telaAparelho,capacidadeAparelho) {
 
 const novoAparelho = new novoAparelho('iphonex', 5.2, 3600);
 console.log(novoAparelho);
+
+
+//mudança github
