@@ -327,17 +327,125 @@ function numeroPrimo(numero) {
 //Pascal case - UmDoisTresQuatro
 
 
-function criarAparelho(marcaAparelho,telaAparelho,capacidadeAparelho) {
-    this.marcaAparelho = marcaAparelho,
-    this.telaAparelho = telaAparelho,
-    this.capacidadeAparelho = capacidadeAparelho,
-    this.ligar = function() {
-        console.log("Fazendo ligação...");
-    }
+//function criarAparelho(marcaAparelho,telaAparelho,capacidadeAparelho) {
+//    this.marcaAparelho = marcaAparelho,
+//    this.telaAparelho = telaAparelho,
+//    this.capacidadeAparelho = capacidadeAparelho,
+//    this.ligar = function() {
+//        console.log("Fazendo ligação...");
+//    }
+//}
+
+//const novoAparelho = new novoAparelho('iphonex', 5.2, 3600);
+//console.log(novoAparelho);
+
+
+
+//natureza dinamica de objetos
+// é possivel adicionar e tirar metodos e parametros 
+//dos objetos
+
+
+//clonando objetos
+
+const carro = {
+    marca: 'Nissan',
+    modelo: 'Versa',
+    ano: 2019,
+    cor: 'Prata'
+};
+
+console.log(carro);
+
+const novoCarro = {...carro};
+console.log(novoCarro);
+
+// aprendendo Math
+//Math.random() criar numeros aleatorios
+// Math.max() vai informar qual maior valor
+//math.min()informa o menor valor
+
+// Obejto endereço
+//criar um objeto
+//rua,cidade,cep,exibir endereço
+
+
+let endereco = {
+    rua: 'santos dumont',
+    cidade: 'fortaleza',
+    cep: '60810120'
+};
+
+function exibirendereco(endereco) {
+    for(let chave in endereco)
+        console.log(chave,endereco[chave]);
 }
 
-const novoAparelho = new novoAparelho('iphonex', 5.2, 3600);
-console.log(novoAparelho);
+exibirendereco(endereco);
+
+//  igualdade de objetos
 
 
-//mudança github
+function endereco1(rua,cidade,cep) {
+    this.rua = rua,
+    this.cidade = cidade,
+    this.cep = cep
+};
+
+const endereco2 = new endereco1('d','e','f');
+const endereco3 = new endereco1('d','e','f');
+
+function saoIguais(endereco2,endereco3) {
+    return endereco2.rua === endereco3.rua &&
+            endereco2.cidade === endereco3.cidade &&
+            endereco2.cep === endereco3.cep
+};
+
+console.log(saoIguais(endereco2,endereco3));
+
+function temEnderecoMemoriaIguais(endereco2,endereco3) {
+    return endereco2 === endereco3;
+}
+
+console.log(temEnderecoMemoriaIguais(endereco2,endereco3));
+
+//objeto postagem de blog
+//exercicio montar um objeto com o nome postagem
+/*
+titulo
+mensagem
+autor
+vizualizações
+comentaarios(dentro de comentario uma array)
+    (autor,mensagem)
+estaoAovivo
+*/
+
+let postagem = {
+    titulo: 'p',
+    mensagem: 'ola',
+    autor: 'tinga',
+    vizualizações: 10,
+    comentarios: [
+        {autor:'tom', mensagem: 'vixe',},
+        {autor: 'cat', mensagem: 'uri',}
+    ],
+    estaAovivo: true,
+};
+
+console.log(postagem);
+
+
+// objeto postagem com constructor function
+
+function postagem2(titulo,mensagem,autor) {
+    this.titulo = titulo,
+    this.mensagem = mensagem,
+    this.autor = autor,
+    this.vizualizações = 0,
+    this.comentarios = [],
+    this.estaAovivo = false
+}
+
+let postagem3 = new postagem2('f','g','h');
+console.log(postagem3);
