@@ -449,3 +449,150 @@ function postagem2(titulo,mensagem,autor) {
 
 let postagem3 = new postagem2('f','g','h');
 console.log(postagem3);
+
+// arrays
+// add novos elementos
+// encontrar novos elementos
+// remover elementos
+// dividir elementos
+// dividir arrays
+// combinar arrays
+
+const numeros = [1,2,3];
+
+//add inicio
+numeros.unshift(0);
+console.log(numeros);
+//add no meio
+numeros.splice(1,0,'z');
+console.log(numeros);
+// add final
+numeros.push(5);
+console.log(numeros);
+
+const number = [1,2,3,1,4];
+//indexof encontra o indice do valor mencionado
+//console.log(number.indexOf(1));
+console.log(number.lastIndexOf(1));
+//lastindexof encontra a ultima ocorrencia deste valor
+//uma fomra de descobrir se existe valors com indexof é
+//console.log(number.indexof(2) !== -1); se retornar true
+//quer dizer que o valor existe na array.
+// hoje existe uma forma mais simples console.log(number.includes(2));
+
+
+//encontrando elementos de uma array(tipos de referencia)
+//caso não exista retorna undefin
+const marcas = [ 
+    {id:1 , nome: 'd'},
+    {id:2 , nome: 'e'},
+];
+
+const marca = marcas.find(function(marca) {
+    return marca.nome === 'e';
+});
+
+console.log(marca);
+    
+//arrow functions
+
+
+//const marcas = [ 
+//    {id:1 , nome: 'd'},
+//    {id:2 , nome: 'e'},
+//];
+
+//const marca = marcas.find(marca => {
+//    return marca.nome === 'e';
+//});
+
+//console.log(marca);
+
+//removendo elementos de uma array
+
+const coisas = [1,2,3,4,5,6];
+
+//final
+coisas.pop()
+console.log(coisas);
+//inicio
+coisas.shift();
+console.log(coisas);
+//meio
+coisas.splice(2,1);
+console.log(coisas);
+
+//esvaziando uma array
+coisas.splice(0, coisas.length);
+console.log(coisas)
+
+//solução 2
+//coisas.lenght = 0;
+//console.log(coisas);
+
+
+//combinando e cortando arrays
+
+const primeiro = [1,2,3];
+const segundo = [4,5,6];
+
+//const combinado = primeiro.concat(segundo);
+
+//console.log(combinado);
+
+//dividir uma array
+
+//const cortado = combinado.slice(2,4);
+//console.log(cortado);
+
+// operador spread
+
+const combinado = [...primeiro,...segundo];
+console.log(combinado);
+//clonando array com spread
+
+const clonado = [...combinado];
+console.log(clonado);
+
+// foreach
+
+const mouses = [1,2,3,4,5];
+
+mouses.forEach(function(mouse){
+    console.log(mouse);
+}) 
+    
+// ou 
+
+// mouses.foreach(mouse) => {
+//    console.log(mouse);
+//}
+
+
+//combinando
+
+const toGether = mouses.join('.');
+console.log(toGether);
+
+
+const frase = "Olá bem vindo ao mundo";
+const resultadoFrase = frase.split(' ');
+console.log(resultadoFrase);
+
+console.log(resultadoFrase.join('-'));
+
+// usando prompt
+
+//let corFavorita = prompt('Qual é sua cor favorita?');
+
+//    if(corFavorita === 'vermelho') {
+//        alert('Essa é minha cor favorita também.');
+//    }
+
+    let maiorDeIdade = prompt('Qual a sua idade?');
+        if(maiorDeIdade >= 18) {
+            alert('Você é maior de idade.')
+        } else {
+            alert('Você é menor de idade.')
+        }
+
